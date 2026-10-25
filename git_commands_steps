@@ -1,0 +1,178 @@
+# to check how many times commit happened
+git log
+$ git log
+commit ae351d805a94263a9a67ee1a2b1f6503d167b3e9 (HEAD -> main)
+Author: Akash Pawar <skylaryan16@gmail.com>
+Date:   Sun Oct 25 09:36:20 2026 +0530
+
+     Third commit
+
+commit b8439a61e95bd8a9cef9d03472320eaa6a509c8a
+Author: Akash Pawar <skylaryan16@gmail.com>
+Date:   Sun Oct 25 09:35:11 2026 +0530
+
+     Second commit
+
+commit feecb96b7fc21e2ed27cb3eca13b33a0bb7b656f
+Author: Akash Pawar <skylaryan16@gmail.com>
+Date:   Sun Oct 25 09:33:57 2026 +0530
+
+     First commit
+
+$ git log --oneline
+ae351d8 (HEAD -> main)  Third commit
+b8439a6  Second commit
+feecb96  First commit
+
+
+#Difference
+$ git diff ae351d8 b8439a6
+diff --git a/file1 b/file1
+index 6da4d3e..7d91453 100644
+--- a/file1
++++ b/file1
+@@ -1,3 +1,2 @@
+ First line
+ Second line
+-Third line
+
+#to check difference between two add (Working area) (staging area) 
+No comites done but one is added to staging area and other is not yet added
+
+$ git diff
+warning: in the working copy of 'file1', LF will be replaced by CRLF the next time Git touches it
+diff --git a/file1 b/file1
+index 5028ae5..fbc4b28 100644
+--- a/file1
++++ b/file1
+@@ -2,3 +2,4 @@ First line
+ Second line
+ Third line
+ Fourth line
++Fifth line
+
+#to check difference between two commits which are done already
+
+Akash Pawar@DESKTOP-14H8CE8 MINGW64 /d/git_test (main)
+$ git diff --cached
+diff --git a/file1 b/file1
+index 6da4d3e..5028ae5 100644
+--- a/file1
++++ b/file1
+@@ -1,3 +1,4 @@
+ First line
+ Second line
+ Third line
++Fourth line
+
+
+#creating repo and adding file in repo
+Akash Pawar@DESKTOP-14H8CE8 MINGW64 /d/git_test (main)
+$ git remote add origin https://github.com/skylaryan16-netizen/Git_Commands_n_Documents.git
+
+Akash Pawar@DESKTOP-14H8CE8 MINGW64 /d/git_test (main)
+$ git branch -M main
+
+Akash Pawar@DESKTOP-14H8CE8 MINGW64 /d/git_test (main)
+$ git push -u origin main
+remote: Invalid username or token. Password authentication is not supported for Git operations.
+fatal: Authentication failed for 'https://github.com/skylaryan16-netizen/Git_Commands_n_Documents.git/'
+
+Akash Pawar@DESKTOP-14H8CE8 MINGW64 /d/git_test (main)
+$ git config --global user.name "skylaryan16-netizen"
+
+Akash Pawar@DESKTOP-14H8CE8 MINGW64 /d/git_test (main)
+$ git config --global user.email "skylaryan16@gmail.com"
+
+Akash Pawar@DESKTOP-14H8CE8 MINGW64 /d/git_test (main)
+$ git push -u origin main
+Enumerating objects: 9, done.
+Counting objects: 100% (9/9), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (9/9), 692 bytes | 346.00 KiB/s, done.
+Total 9 (delta 0), reused 0 (delta 0), pack-reused 0 (from 0)
+To https://github.com/skylaryan16-netizen/Git_Commands_n_Documents.git
+ * [new branch]      main -> main
+branch 'main' set up to track 'origin/main'.
+
+
+
+502  cd /d
+  503  ls -lrt
+  504  mkdir git_test
+  505  cd git_test
+  506  git init
+  507  echo "First line" > file1
+  508  git status
+  509  git add file1
+  510  git status
+  511  git commit -m " First commit"
+  512  echo "Second line" >>file1
+  513  git status
+  514  git add file1
+  515  git commit -m " Second commit"
+  516  echo "Third line" >>file1
+  517  git status
+  518  git add file1
+  519  git status
+  520  git commit -m " Third commit"
+  521  git log
+  526  git log --oneline
+  527  git diff ae351d8 b8439a6
+  528  history
+  529  echo "Fourth line" >>file1
+  530  git status
+  531  git add .
+  532  echo "Fifth line" >>file1
+  533  git status
+  534  git diff
+  535  git diff --cached
+  536  history | tail -10
+  537  git remote add origin https://github.com/skylaryan16-netizen/Git_Commands_n_Documents.git
+  538  git branch -M main
+  539  git push -u origin main
+  540  git config --global user.name "skylaryan16-netizen"
+  541  git config --global user.email "skylaryan16@gmail.com"
+  542  git push -u origin main
+  543  git status
+  544  git add all
+  545  git add .
+  546  git commit -m "end "
+  547  git push -u origin main
+  548  history | tail -10
+  549  history | tail -15
+
+
+Below add done one fourth (Moved to Staging area)
+Below not yet added (It is still in working area)
+$ echo "Fourth line" >>file1
+
+Akash Pawar@DESKTOP-14H8CE8 MINGW64 /d/git_test (main)
+$ git status
+On branch main
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   file1
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+Akash Pawar@DESKTOP-14H8CE8 MINGW64 /d/git_test (main)
+$ git add .
+warning: in the working copy of 'file1', LF will be replaced by CRLF the next time Git touches it
+
+Akash Pawar@DESKTOP-14H8CE8 MINGW64 /d/git_test (main)
+$ echo "Fifth line" >>file1
+
+Akash Pawar@DESKTOP-14H8CE8 MINGW64 /d/git_test (main)
+$ git status
+On branch main
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        modified:   file1
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   file1
