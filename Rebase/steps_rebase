@@ -1,0 +1,49 @@
+  562  cd ../Rebase/
+  563  ls -lrt
+  564  vi index.html
+  565  ls -lrt
+  566  git branch rebase
+  567  git branch
+  568  git checkout rebase
+  569  ls -lrt
+  570  vi profile.html
+  571  pwd
+  572  git checkout main
+  573  ls -lrt
+  574  rm profile.html
+  575  rm index.html
+  576  vi index.html
+  577  git add .
+  578  git commit -m " main index commited "
+  579  git checkout rebase
+  580  ls -lrt
+  581  git checkout main
+  582  git branch
+  583  git branch -d rebase
+  584  git branch rebase
+  585  git checkout rebase
+  586  ls -lrt
+  587  vi profile.html
+  588  ls -lrt
+  589  vi index.html
+  590  git add .
+  591  git commit -m "commiting incorrect index.html"
+  592  pwd
+  593  git checkout main
+  594  git checkout rebase
+  595  echo "you should be that bracnh where you see gliched and want contain from base branch"
+  596  git rebase main
+  597  ls -lrt
+  598  git add *
+  599  git add .
+  600  git commit -m "done with rebase"
+  601  git checkout main
+  602  git branch
+  603  git branch rebase
+  604  git checkout rebase
+  605  ls -lrt
+  606  vi index.html
+  607  git rebase main
+  608  ls -lrt
+  609  history | tail -60
+

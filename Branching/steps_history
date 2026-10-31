@@ -1,0 +1,49 @@
+ 501  cd /d
+  502  ls -lrt
+  503  cd git_test
+  504  ls -lrt
+  505  pwd
+  506  mkdir Branching
+  507  ls -lrt
+  508  cd Branching
+  509  vi index.html
+  510  git branch
+  511  git branch pr
+  512  ls -lrt
+  513  vi profile.html
+  514  git checkout main
+  515  ls -lrt
+  516  rm profile.html
+  517  ls -lrt
+  518  git add .
+  519  git add *
+  520  git commit -m "index created"
+  521  git checkout pr
+  522  ls -lrt
+  523  pwd
+  524  git branch
+  525  git checkout main
+  526  git delete pr
+  527  git branch
+  528  git -delete pr
+  529  git --delete pr
+  530  git branch -d pr
+  531  git branch
+  532  git branch pr
+  533  ls -lrt
+  534  git checkout pr
+  535  ls -lrt
+  536  vi profile.html
+  537  ls -lrt
+  538  git add .
+  539  git commit -m "profile created"
+  540  git checkout main
+  541  ls
+  542  ls -lrt
+  543  git checkout pr
+  544  ls -lrt
+  545  git checkout main
+  546  git branch
+  547  git merge pr
+  548  ls -lrt
+
