@@ -1,0 +1,165 @@
+Akash Pawar@DESKTOP-14H8CE8 MINGW64 /d/git_test (main)
+$ mkdir Cherry
+
+Akash Pawar@DESKTOP-14H8CE8 MINGW64 /d/git_test (main)
+$ cd Cherry/
+
+Akash Pawar@DESKTOP-14H8CE8 MINGW64 /d/git_test/Cherry (main)
+$ s -lrt
+bash: s: command not found
+
+Akash Pawar@DESKTOP-14H8CE8 MINGW64 /d/git_test/Cherry (main)
+$ ls -lrt
+total 0
+
+Akash Pawar@DESKTOP-14H8CE8 MINGW64 /d/git_test/Cherry (main)
+$ echo "test" > file1
+
+Akash Pawar@DESKTOP-14H8CE8 MINGW64 /d/git_test/Cherry (main)
+$ git add .
+warning: in the working copy of 'Cherry/file1', LF will be replaced by CRLF the next time Git touches it
+
+Akash Pawar@DESKTOP-14H8CE8 MINGW64 /d/git_test/Cherry (main)
+$ git commit -m "1"
+[main 8f2d836] 1
+ 1 file changed, 1 insertion(+)
+ create mode 100644 Cherry/file1
+
+Akash Pawar@DESKTOP-14H8CE8 MINGW64 /d/git_test/Cherry (main)
+$ git branch new
+
+Akash Pawar@DESKTOP-14H8CE8 MINGW64 /d/git_test/Cherry (main)
+$ git checkout new
+Switched to branch 'new'
+
+Akash Pawar@DESKTOP-14H8CE8 MINGW64 /d/git_test/Cherry (new)
+$ ls
+file1
+
+Akash Pawar@DESKTOP-14H8CE8 MINGW64 /d/git_test/Cherry (new)
+$ echo "test" > file2
+
+Akash Pawar@DESKTOP-14H8CE8 MINGW64 /d/git_test/Cherry (new)
+$ git add .
+warning: in the working copy of 'Cherry/file2', LF will be replaced by CRLF the next time Git touches it
+
+Akash Pawar@DESKTOP-14H8CE8 MINGW64 /d/git_test/Cherry (new)
+$ git commit -m "2"
+[new ee6a78e] 2
+ 1 file changed, 1 insertion(+)
+ create mode 100644 Cherry/file2
+
+Akash Pawar@DESKTOP-14H8CE8 MINGW64 /d/git_test/Cherry (new)
+$ echo "test" > file3
+
+Akash Pawar@DESKTOP-14H8CE8 MINGW64 /d/git_test/Cherry (new)
+$ git add .
+warning: in the working copy of 'Cherry/file3', LF will be replaced by CRLF the next time Git touches it
+
+Akash Pawar@DESKTOP-14H8CE8 MINGW64 /d/git_test/Cherry (new)
+$ git commit -m "3"
+[new 4ac4a1a] 3
+ 1 file changed, 1 insertion(+)
+ create mode 100644 Cherry/file3
+
+Akash Pawar@DESKTOP-14H8CE8 MINGW64 /d/git_test/Cherry (new)
+$ echo "test" > file4
+
+Akash Pawar@DESKTOP-14H8CE8 MINGW64 /d/git_test/Cherry (new)
+$ git add .
+warning: in the working copy of 'Cherry/file4', LF will be replaced by CRLF the next time Git touches it
+
+Akash Pawar@DESKTOP-14H8CE8 MINGW64 /d/git_test/Cherry (new)
+$ git commit -m "4"
+[new 1c74e57] 4
+ 1 file changed, 1 insertion(+)
+ create mode 100644 Cherry/file4
+
+Akash Pawar@DESKTOP-14H8CE8 MINGW64 /d/git_test/Cherry (new)
+$ ls -lrt
+total 4
+-rw-r--r-- 1 Akash Pawar 197121 5 Oct 31 10:09 file1
+-rw-r--r-- 1 Akash Pawar 197121 5 Oct 31 10:10 file2
+-rw-r--r-- 1 Akash Pawar 197121 5 Oct 31 10:11 file3
+-rw-r--r-- 1 Akash Pawar 197121 5 Oct 31 10:11 file4
+
+Akash Pawar@DESKTOP-14H8CE8 MINGW64 /d/git_test/Cherry (new)
+$ git log --oneline
+1c74e57 (HEAD -> new) 4
+4ac4a1a 3
+ee6a78e 2
+8f2d836 (main) 1
+243752e (origin/main, origin/HEAD) Merge pull request #1 from skylaryan16-netizen/rebase
+ed9a348 (origin/rebase) done with rebase
+72915ae commiting incorrect index.html
+fa44888  main index commited
+880e691  steps
+c148e70 profile created
+3e6304b index created
+3c93eb8 adding git document
+f81ae5e adding git document
+9be01b6 end
+ae351d8  Third commit
+b8439a6  Second commit
+feecb96  First commit
+
+Akash Pawar@DESKTOP-14H8CE8 MINGW64 /d/git_test/Cherry (new)
+$ git checkout main
+Switched to branch 'main'
+Your branch is ahead of 'origin/main' by 1 commit.
+  (use "git push" to publish your local commits)
+
+Akash Pawar@DESKTOP-14H8CE8 MINGW64 /d/git_test/Cherry (main)
+$ git log --oneline
+8f2d836 (HEAD -> main) 1
+243752e (origin/main, origin/HEAD) Merge pull request #1 from skylaryan16-netizen/rebase
+ed9a348 (origin/rebase) done with rebase
+72915ae commiting incorrect index.html
+fa44888  main index commited
+880e691  steps
+c148e70 profile created
+3e6304b index created
+3c93eb8 adding git document
+f81ae5e adding git document
+9be01b6 end
+ae351d8  Third commit
+b8439a6  Second commit
+feecb96  First commit
+
+Akash Pawar@DESKTOP-14H8CE8 MINGW64 /d/git_test/Cherry (main)
+$ git cherry-pic 4ac4a1a
+git: 'cherry-pic' is not a git command. See 'git --help'.
+
+The most similar command is
+        cherry-pick
+
+Akash Pawar@DESKTOP-14H8CE8 MINGW64 /d/git_test/Cherry (main)
+$ git cherry-pick 4ac4a1a
+[main 0957ab0] 3
+ Date: Sat Oct 31 10:11:28 2026 +0530
+ 1 file changed, 1 insertion(+)
+ create mode 100644 Cherry/file3
+
+Akash Pawar@DESKTOP-14H8CE8 MINGW64 /d/git_test/Cherry (main)
+$ ls -lrt
+total 2
+-rw-r--r-- 1 Akash Pawar 197121 5 Oct 31 10:09 file1
+-rw-r--r-- 1 Akash Pawar 197121 6 Oct 31 10:15 file3
+
+Akash Pawar@DESKTOP-14H8CE8 MINGW64 /d/git_test/Cherry (main)
+$ git cherry-pick 1c74e57
+[main 28d3b55] 4
+ Date: Sat Oct 31 10:11:45 2026 +0530
+ 1 file changed, 1 insertion(+)
+ create mode 100644 Cherry/file4
+
+Akash Pawar@DESKTOP-14H8CE8 MINGW64 /d/git_test/Cherry (main)
+$ ls -lrt
+total 3
+-rw-r--r-- 1 Akash Pawar 197121 5 Oct 31 10:09 file1
+-rw-r--r-- 1 Akash Pawar 197121 6 Oct 31 10:15 file3
+-rw-r--r-- 1 Akash Pawar 197121 6 Oct 31 10:16 file4
+
+Akash Pawar@DESKTOP-14H8CE8 MINGW64 /d/git_test/Cherry (main)
+$
+
