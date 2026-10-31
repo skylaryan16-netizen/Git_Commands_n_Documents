@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Profile | My Website</title>
+  <style>
+    * { box-sizing: border-box; }
+    body { margin: 0; font-family: Arial, sans-serif; color: #243047; background: #f4f7fb; }
+    header { background: #173b67; color: white; padding: 22px 8%; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; }
+    header h1 { margin: 0; font-size: 24px; }
+    nav a { color: white; text-decoration: none; margin-left: 20px; font-weight: bold; }
+    nav a:hover { text-decoration: underline; }
+    main { max-width: 760px; margin: 55px auto; padding: 0 22px; }
+    .profile-card { background: white; padding: 38px; border-radius: 16px; box-shadow: 0 8px 25px #173b6715; text-align: center; }
+    .avatar { width: 105px; height: 105px; margin: 0 auto 18px; border-radius: 50%; background: #dcecff; color: #173b67; display: grid; place-items: center; font-size: 42px; font-weight: bold; }
+    h2 { color: #173b67; margin-bottom: 8px; }
+    p { line-height: 1.7; color: #596579; }
+    .button { display: inline-block; margin-top: 18px; padding: 13px 24px; background: #2878d0; color: white; text-decoration: none; border-radius: 8px; font-weight: bold; }
+    .button:hover { background: #1d5fa9; }
+    footer { text-align: center; padding: 25px; color: #718096; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>My Website</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="profile.html">Profile</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="profile-card">
+      <div class="avatar" aria-hidden="true">Y</div>
+      <h2>Your Name</h2>
+      <p><strong>Welcome to my profile!</strong></p>
+      <p>Write a short introduction about yourself here. You can add your education, skills, interests, or experience.</p>
+      <a class="button" href="index.html">Back to Home</a>
+    </section>
+  </main>
+
+  <footer>&copy; 2026 My Website</footer>
+</body>
+</html>
+
