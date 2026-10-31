@@ -1,0 +1,116 @@
+Akash Pawar@DESKTOP-14H8CE8 MINGW64 /d/git_test/Conflicts (main)
+$ ls -lrt
+total 1
+-rw-r--r-- 1 Akash Pawar 197121 6 Oct 31 10:19 file1
+
+Akash Pawar@DESKTOP-14H8CE8 MINGW64 /d/git_test/Conflicts (main)
+$ ls -lrt
+total 1
+-rw-r--r-- 1 Akash Pawar 197121 6 Oct 31 10:19 file1
+
+Akash Pawar@DESKTOP-14H8CE8 MINGW64 /d/git_test/Conflicts (main)
+$ git branch new
+
+Akash Pawar@DESKTOP-14H8CE8 MINGW64 /d/git_test/Conflicts (main)
+$ git checkout new
+Switched to branch 'new'
+
+Akash Pawar@DESKTOP-14H8CE8 MINGW64 /d/git_test/Conflicts (new)
+$ ls -lrt
+total 1
+-rw-r--r-- 1 Akash Pawar 197121 6 Oct 31 10:19 file1
+
+Akash Pawar@DESKTOP-14H8CE8 MINGW64 /d/git_test/Conflicts (new)
+$ echo "line2" >file1
+
+Akash Pawar@DESKTOP-14H8CE8 MINGW64 /d/git_test/Conflicts (new)
+$ echo "line2" >>file1
+
+Akash Pawar@DESKTOP-14H8CE8 MINGW64 /d/git_test/Conflicts (new)
+$ echo "line2" >>file1
+
+Akash Pawar@DESKTOP-14H8CE8 MINGW64 /d/git_test/Conflicts (new)
+$ git add .
+warning: in the working copy of 'Conflicts/file1', LF will be replaced by CRLF the next time Git touches it
+
+Akash Pawar@DESKTOP-14H8CE8 MINGW64 /d/git_test/Conflicts (new)
+$ git commit -m "file 1 changed"
+[new d958104] file 1 changed
+ 1 file changed, 3 insertions(+), 1 deletion(-)
+
+Akash Pawar@DESKTOP-14H8CE8 MINGW64 /d/git_test/Conflicts (new)
+$ git checkout main
+Switched to branch 'main'
+Your branch is ahead of 'origin/main' by 1 commit.
+  (use "git push" to publish your local commits)
+
+Akash Pawar@DESKTOP-14H8CE8 MINGW64 /d/git_test/Conflicts (main)
+$ ls -lrt
+total 1
+-rw-r--r-- 1 Akash Pawar 197121 7 Oct 31 10:27 file1
+
+Akash Pawar@DESKTOP-14H8CE8 MINGW64 /d/git_test/Conflicts (main)
+$ cat file1
+file1
+
+Akash Pawar@DESKTOP-14H8CE8 MINGW64 /d/git_test/Conflicts (main)
+$ vi file1
+
+Akash Pawar@DESKTOP-14H8CE8 MINGW64 /d/git_test/Conflicts (main)
+$ git add .
+
+Akash Pawar@DESKTOP-14H8CE8 MINGW64 /d/git_test/Conflicts (main)
+$ git commit -m "file changed in main"
+[main 1c484bf] file changed in main
+ 1 file changed, 3 insertions(+)
+
+Akash Pawar@DESKTOP-14H8CE8 MINGW64 /d/git_test/Conflicts (main)
+$ cat file1
+file1
+line3
+line4
+line5
+
+Akash Pawar@DESKTOP-14H8CE8 MINGW64 /d/git_test/Conflicts (main)
+$ git checkout new
+Switched to branch 'new'
+
+Akash Pawar@DESKTOP-14H8CE8 MINGW64 /d/git_test/Conflicts (new)
+$ cat file1
+line2
+line2
+line2
+
+Akash Pawar@DESKTOP-14H8CE8 MINGW64 /d/git_test/Conflicts (new)
+$ git checkout main
+Switched to branch 'main'
+Your branch is ahead of 'origin/main' by 2 commits.
+  (use "git push" to publish your local commits)
+
+Akash Pawar@DESKTOP-14H8CE8 MINGW64 /d/git_test/Conflicts (main)
+$ git merge new
+Auto-merging Conflicts/file1
+CONFLICT (content): Merge conflict in Conflicts/file1
+Automatic merge failed; fix conflicts and then commit the result.
+
+Akash Pawar@DESKTOP-14H8CE8 MINGW64 /d/git_test/Conflicts (main|MERGING)
+$ vi file1
+
+Akash Pawar@DESKTOP-14H8CE8 MINGW64 /d/git_test/Conflicts (main|MERGING)
+$ git add .
+
+Akash Pawar@DESKTOP-14H8CE8 MINGW64 /d/git_test/Conflicts (main|MERGING)
+$ git commit -m " Conflict manually resolved"
+[main d0d37c3]  Conflict manually resolved
+
+Akash Pawar@DESKTOP-14H8CE8 MINGW64 /d/git_test/Conflicts (main)
+$ cat file1
+file1
+line3
+line4
+line5
+line2
+
+Akash Pawar@DESKTOP-14H8CE8 MINGW64 /d/git_test/Conflicts (main)
+$
+
